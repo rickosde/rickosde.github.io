@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rickosde — Developer profile</title>
+<meta name="description" content="Projects and open-source statistics for rickosde on GitHub.">
+<meta name="theme-color" content="#0d1014">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1014; --surface:#12161b; --line:#1f252d; --text:#e6e9ee; --muted:#8b94a1; --accent:#8fb0ff;
+  --font:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+.top .brand{font-weight:600;letter-spacing:-.01em}
+.top nav{display:flex;gap:24px;color:var(--muted);font-size:15px}
+.top nav a:hover{color:var(--text)}
 
+/* hero */
+.hero{display:grid;grid-template-columns:112px 1fr;gap:32px;align-items:center;padding:72px 0 56px}
+.avatar{width:112px;height:112px;border-radius:50%;background:var(--surface);border:1px solid var(--line);object-fit:cover}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;font-weight:700;letter-spacing:-.03em}
+.hero .handle{color:var(--muted);margin-top:6px}
+.hero .bio{margin-top:16px;max-width:56ch;color:#c4cad3;font-size:1.08rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;color:var(--muted);font-size:14px}
+.btn{display:inline-block;margin-top:24px;padding:10px 18px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-weight:500;font-size:15px;transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--accent);background:#161b22}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.stat{padding:24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:2rem;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--muted);font-size:14px}
+
+section{padding:72px 0 0}
+h2{font-size:1.35rem;font-weight:600;letter-spacing:-.015em}
+.sub{color:var(--muted);font-size:15px;margin-top:4px}
+
+/* languages */
+.bar{display:flex;height:10px;margin-top:24px;border-radius:5px;overflow:hidden;background:var(--line);gap:2px}
+.bar i{display:block;min-width:3px;transition:flex-grow .6s ease}
+.legend{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px;font-size:15px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend em{font-style:normal;color:var(--muted);font-variant-numeric:tabular-nums}
+.dot{width:9px;height:9px;border-radius:50%}
+
+/* projects */
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.sort{display:flex;gap:4px;padding:3px;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+.sort button{font:500 14px var(--font);color:var(--muted);background:none;border:0;padding:6px 12px;border-radius:6px;cursor:pointer}
+.sort button[aria-pressed=true]{background:var(--line);color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+.repo{display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:border-color .2s}
+.repo:hover{border-color:#3a4553}
+.repo h3{font-size:1.05rem;font-weight:600;letter-spacing:-.01em;word-break:break-word}
+.repo p{color:var(--muted);font-size:15px;margin:8px 0 18px;flex:1}
+.repo .row{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.repo .row span{display:inline-flex;align-items:center;gap:6px}
+.topics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.topics span{font-size:12.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:#aab3c0}
+.more{margin-top:24px;display:flex;justify-content:center}
+.more button{font:500 15px var(--font);color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 18px;cursor:pointer}
+.more button:hover{border-color:var(--accent)}
+
+/* activity */
+.feed{list-style:none;padding:0;margin-top:20px;border-top:1px solid var(--line)}
+.feed li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.feed small{color:var(--muted);white-space:nowrap}
+.feed a:hover{color:var(--accent)}
+.feed .msg{color:var(--muted)}
+
+.state{color:var(--muted);padding:32px 0}
+.state a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.skeleton{background:linear-gradient(90deg,var(--surface),#171c23,var(--surface));background-size:200% 100%;animation:sh 1.4s infinite linear;border-radius:12px;height:150px}
+@keyframes sh{to{background-position:-200% 0}}
+
+footer{margin-top:96px;padding:28px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer a:hover{color:var(--text)}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;gap:20px;padding-top:40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .grid{grid-template-columns:1fr}
+  .top nav{gap:16px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">rickosde</a>
+    <nav aria-label="Primary">
+      <a href="#stats">Stats</a>
+      <a href="#projects">Projects</a>
+      <a href="#activity">Activity</a>
+      <a href="https://github.com/rickosde" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="hero">
+      <img class="avatar" id="avatar" alt="" width="112" height="112" src="https://github.com/rickosde.png?size=224">
+      <div>
+        <h1 id="name">rickosde</h1>
+        <div class="handle">@rickosde</div>
+        <p class="bio" id="bio">Software developer building and sharing open-source projects.</p>
+        <div class="meta" id="meta"></div>
+        <a class="btn" href="https://github.com/rickosde" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+
+    <section id="stats" style="padding-top:0">
+      <div class="stats" id="statsGrid" aria-live="polite">
+        <div class="stat"><b>–</b><span>Public repositories</span></div>
+        <div class="stat"><b>–</b><span>Stars earned</span></div>
+        <div class="stat"><b>–</b><span>Forks</span></div>
+        <div class="stat"><b>–</b><span>Followers</span></div>
+      </div>
+    </section>
+
+    <section id="languages">
+      <h2>Languages</h2>
+      <p class="sub">Share of public repositories by primary language.</p>
+      <div class="bar" id="bar" role="img" aria-label="Language distribution"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section id="projects">
+      <div class="head">
+        <div>
+          <h2>Projects</h2>
+          <p class="sub">Original work, excluding forks and archived repositories.</p>
+        </div>
+        <div class="sort" role="group" aria-label="Sort projects">
+          <button data-sort="stars" aria-pressed="true">Most starred</button>
+          <button data-sort="updated" aria-pressed="false">Recently updated</button>
+        </div>
+      </div>
+      <div class="grid" id="grid">
+        <div class="skeleton"></div><div class="skeleton"></div>
+        <div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+      <div class="more" id="more"></div>
+    </section>
+
+    <section id="activity">
+      <h2>Recent activity</h2>
+      <p class="sub">Latest public pushes.</p>
+      <ul class="feed" id="feed"><li><span class="msg">Loading…</span></li></ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> rickosde</span>
+    <span>Data from the <a href="https://docs.github.com/rest" rel="noopener">GitHub REST API</a></span>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const USER = 'rickosde';
+  const API = 'https://api.github.com';
+  const PAGE = 6;
+  const COLORS = ['#8fb0ff','#6ee7c8','#f2c879','#e58fb0','#b49cff','#7fd1f2','#a3e08a','#f0a07a'];
+  const $ = id => document.getElementById(id);
+  const fmt = n => new Intl.NumberFormat('en').format(n);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const ago = iso => {
+    const s = (Date.now() - new Date(iso)) / 1000;
+    const u = [['year',31536000],['month',2592000],['day',86400],['hour',3600],['minute',60]];
+    for (const [n, v] of u) if (s >= v) { const x = Math.floor(s / v); return `${x} ${n}${x > 1 ? 's' : ''} ago`; }
+    return 'just now';
+  };
+
+  async function get(path) {
+    const key = 'gh:' + path;
+    try {
+      const c = JSON.parse(sessionStorage.getItem(key));
+      if (c && Date.now() - c.t < 600000) return c.d;
+    } catch (e) {}
+    const r = await fetch(API + path, { headers: { Accept: 'application/vnd.github+json' } });
+    if (!r.ok) {
+      const err = new Error('HTTP ' + r.status);
+      err.status = r.status;
+      throw err;
+    }
+    const d = await r.json();
+    try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), d })); } catch (e) {}
+    return d;
+  }
+
+  function showError(err) {
+    const limited = err.status === 403 || err.status === 429;
+    const msg = limited
+      ? 'GitHub’s API rate limit was reached. Try again in a few minutes, or'
+      : 'The GitHub data could not be loaded. Try reloading the page, or';
+    const html = `<div class="state">${msg} <a href="https://github.com/${USER}" rel="noopener">open the profile on GitHub</a>.</div>`;
+    $('grid').innerHTML = html;
+    $('feed').innerHTML = '';
+  }
+
+  function renderProfile(u) {
+    if (u.name) { $('name').textContent = u.name; document.title = `${u.name} (${USER}) — Developer profile`; }
+    if (u.bio) $('bio').textContent = u.bio;
+    $('avatar').src = u.avatar_url + '&s=224';
+    const bits = [];
+    if (u.company) bits.push(`<span>${esc(u.company)}</span>`);
+    if (u.location) bits.push(`<span>${esc(u.location)}</span>`);
+    if (u.blog) {
+      const url = /^https?:\/\//.test(u.blog) ? u.blog : 'https://' + u.blog;
+      bits.push(`<a href="${esc(url)}" rel="noopener">${esc(u.blog.replace(/^https?:\/\//, ''))}</a>`);
+    }
+    bits.push(`<span>On GitHub since ${new Date(u.created_at).getFullYear()}</span>`);
+    $('meta').innerHTML = bits.join('');
+  }
+
+  function renderStats(u, repos) {
+    const own = repos.filter(r => !r.fork);
+    const stars = own.reduce((a, r) => a + r.stargazers_count, 0);
+    const forks = own.reduce((a, r) => a + r.forks_count, 0);
+    const items = [
+      [u.public_repos, 'Public repositories'],
+      [stars, 'Stars earned'],
+      [forks, 'Forks'],
+      [u.followers, 'Followers']
+    ];
+    $('statsGrid').innerHTML = items.map(([n, l]) => `<div class="stat"><b>${fmt(n)}</b><span>${l}</span></div>`).join('');
+  }
+
+  function renderLanguages(repos) {
+    const counts = {};
+    repos.filter(r => !r.fork && r.language).forEach(r => counts[r.language] = (counts[r.language] || 0) + 1);
+    const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const total = entries.reduce((a, [, n]) => a + n, 0);
+    if (!total) { $('languages').hidden = true; return; }
+    const top = entries.slice(0, 7);
+    const rest = entries.slice(7).reduce((a, [, n]) => a + n, 0);
+    if (rest) top.push(['Other', rest]);
+    $('bar').innerHTML = top.map(([n, c], i) =>
+      `<i style="flex:${c};background:${COLORS[i % COLORS.length]}" title="${esc(n)}"></i>`).join('');
+    $('legend').innerHTML = top.map(([n, c], i) =>
+      `<span><i class="dot" style="background:${COLORS[i % COLORS.length]}"></i>${esc(n)} <em>${Math.round(c / total * 100)}%</em></span>`).join('');
+  }
+
+  let projects = [], sort = 'stars', shown = PAGE;
+  function renderProjects() {
+    const list = [...projects].sort((a, b) => sort === 'stars'
+      ? b.stargazers_count - a.stargazers_count || new Date(b.pushed_at) - new Date(a.pushed_at)
+      : new Date(b.pushed_at) - new Date(a.pushed_at));
+    if (!list.length) {
+      $('grid').innerHTML = `<div class="state">No public projects yet. Check back soon.</div>`;
+      $('more').innerHTML = '';
+      return;
+    }
+    $('grid').innerHTML = list.slice(0, shown).map(r => `
+      <a class="repo" href="${esc(r.html_url)}" rel="noopener">
+        <h3>${esc(r.name)}</h3>
+        <p>${esc(r.description || 'No description provided.')}</p>
+        ${r.topics && r.topics.length ? `<div class="topics">${r.topics.slice(0, 4).map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}
+        <div class="row">
+          ${r.language ? `<span>${esc(r.language)}</span>` : ''}
+          <span>★ ${fmt(r.stargazers_count)}</span>
+          <span>⑂ ${fmt(r.forks_count)}</span>
+          <span>Updated ${ago(r.pushed_at)}</span>
+        </div>
+      </a>`).join('');
+    $('more').innerHTML = list.length > shown
+      ? `<button id="moreBtn">Show more projects</button>` : '';
+    const b = $('moreBtn');
+    if (b) b.onclick = () => { shown += PAGE; renderProjects(); };
+  }
+
+  document.querySelectorAll('.sort button').forEach(b => b.addEventListener('click', () => {
+    sort = b.dataset.sort; shown = PAGE;
+    document.querySelectorAll('.sort button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    renderProjects();
+  }));
+
+  function renderActivity(events) {
+    const pushes = events.filter(e => e.type === 'PushEvent' && e.payload.commits && e.payload.commits.length).slice(0, 6);
+    if (!pushes.length) { $('activity').hidden = true; return; }
+    $('feed').innerHTML = pushes.map(e => {
+      const repo = e.repo.name;
+      const c = e.payload.commits[e.payload.commits.length - 1];
+      return `<li>
+        <span><a href="https://github.com/${esc(repo)}" rel="noopener">${esc(repo.split('/')[1])}</a>
+        <span class="msg"> — ${esc((c.message || '').split('\n')[0].slice(0, 80))}</span></span>
+        <small>${ago(e.created_at)}</small></li>`;
+    }).join('');
+  }
+
+  $('year').textContent = new Date().getFullYear();
+
+  (async () => {
+    try {
+      const [user, repos] = await Promise.all([
+        get(`/users/${USER}`),
+        get(`/users/${USER}/repos?per_page=100&type=owner&sort=pushed`)
+      ]);
+      renderProfile(user);
+      renderStats(user, repos);
+      renderLanguages(repos);
+      projects = repos.filter(r => !r.fork && !r.archived && r.name.toLowerCase() !== `${USER}.github.io`);
+      renderProjects();
+      try { renderActivity(await get(`/users/${USER}/events/public?per_page=30`)); }
+      catch (e) { $('activity').hidden = true; }
+    } catch (err) { showError(err); }
+  })();
+})();
+</script>
+</body>
+</html>
