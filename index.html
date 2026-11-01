@@ -1,439 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>rickosde — Developer Portfolio</title>
-<meta name="description" content="Portfolio of rickosde: a young developer interested in web development, servers, networking and software. Projects and statistics from GitHub.">
-<meta name="theme-color" content="#0d1014">
-<link rel="canonical" href="https://rickosde.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="rickosde — Developer Portfolio">
-<meta property="og:description" content="Web development, servers, networking and software. Projects and statistics from GitHub.">
-<meta property="og:url" content="https://rickosde.github.io/">
-<meta property="og:image" content="https://github.com/rickosde.png?size=224">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312161b'/%3E%3Cpath d='M11 22V10M11 16c0-3.5 2-6 6-6' stroke='%238fb0ff' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"rickosde","url":"https://rickosde.github.io/","image":"https://github.com/rickosde.png?size=224","sameAs":["https://github.com/rickosde"],"description":"Young developer interested in web development, servers, networking and software."}
-</script>
-<style>
-:root{
-  --bg:#0d1014; --surface:#12161b; --raised:#171c22; --line:#1f252d; --line-strong:#2e3743;
-  --text:#e6e9ee; --muted:#8b94a1; --accent:#8fb0ff;
-  --sans:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
-  --r:8px; color-scheme:dark;
-}
-*,*::before,*::after{box-sizing:border-box}
-*{margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:24px;-webkit-text-size-adjust:100%}
-@media (min-width:1700px){html{font-size:106.25%}}
-body{background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-wrap:break-word;min-height:100vh}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.skip{position:absolute;left:16px;top:-60px;background:var(--accent);color:#0d1014;padding:8px 14px;border-radius:var(--r);font-weight:600;z-index:10}
-.skip:focus{top:16px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ricko — IT student and developer interested in web development, software and infrastructure.">
+  <meta name="theme-color" content="#101114">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ricko — Developer Portfolio">
+  <meta property="og:description" content="IT student · Developer · Web, software and infrastructure.">
+  <meta property="og:url" content="https://rickosde.github.io/">
+  <meta property="og:image" content="https://github.com/rickosde.png?size=512">
+  <meta name="twitter:card" content="summary">
+  <title>Ricko — Developer Portfolio</title>
+  <link rel="icon" href="https://github.com/rickosde.png?size=64">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101114;
+      --panel: #17191e;
+      --panel-2: #1c1f25;
+      --panel-hover: #22262e;
+      --line: #2a2e37;
+      --line-soft: #22252c;
+      --text: #f2f3f5;
+      --muted: #a0a5af;
+      --subtle: #727985;
+      --accent: #91aaff;
+      --accent-soft: rgba(145,170,255,.12);
+      --green: #80c7a0;
+      --radius: 14px;
+      --sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --display: "Space Grotesk", var(--sans);
+      --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+      --width: 1160px;
+    }
 
-/* layout */
-.shell{display:grid;grid-template-columns:minmax(0,288px) minmax(0,1fr);gap:clamp(40px,6vw,96px);max-width:1200px;margin:0 auto;padding:clamp(32px,6vw,88px) clamp(20px,4vw,48px)}
-@media (min-width:1700px){.shell{max-width:1320px}}
-.profile{align-self:start}
-@media (min-width:901px) and (min-height:720px){.profile{position:sticky;top:56px}}
-@media (max-width:900px){.shell{grid-template-columns:minmax(0,1fr);gap:40px}.sidenav{display:none}}
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 78% 0%, rgba(76,98,155,.10), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font: 400 15px/1.7 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    ::selection { background: rgba(145,170,255,.28); color: white; }
 
-/* profile */
-.avatar{width:96px;height:96px;border-radius:14px;border:1px solid var(--line-strong);background:var(--surface);object-fit:cover;display:block}
-.profile h1{margin-top:20px;font-size:1.75rem;font-weight:650;letter-spacing:-.02em;line-height:1.15}
-.handle{color:var(--muted);font-family:var(--mono);font-size:.875rem;margin-top:4px}
-.bio{margin-top:16px;color:#c4cad3;font-size:.975rem}
-.facts{list-style:none;padding:0;margin-top:20px;display:grid;gap:6px;font-size:.9rem;color:var(--muted)}
-.facts a{color:var(--text);border-bottom:1px solid var(--line-strong);transition:border-color .2s,color .2s}
-.facts a:hover{border-color:var(--accent);color:var(--accent)}
-.edu{margin-top:28px;padding-left:16px;border-left:2px solid var(--line-strong)}
-.edu h2{font-size:.85rem;font-weight:500;color:var(--muted)}
-.edu p{margin-top:4px;font-size:.95rem}
-.edu small{display:block;color:var(--muted);font-size:.85rem}
-.sidenav{margin-top:32px;display:grid;gap:2px;font-size:.925rem}
-.sidenav a{color:var(--muted);padding:6px 0;transition:color .2s,transform .2s}
-.sidenav a:hover{color:var(--text);transform:translateX(3px)}
+    .wrap { width: min(var(--width), calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: rgba(16,17,20,.82);
+      backdrop-filter: blur(18px);
+    }
+    .topbar-inner {
+      min-height: 68px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font: 600 17px var(--display); letter-spacing: -.04em; }
+    .brand-mark {
+      width: 31px; height: 31px; display: grid; place-items: center;
+      border: 1px solid #3a4355; border-radius: 9px;
+      color: var(--accent); background: #1b202b; font: 600 14px var(--display);
+    }
+    .nav { display: flex; align-items: center; gap: 27px; }
+    .nav a { color: var(--muted); font-size: 13px; transition: color .2s; }
+    .nav a:hover, .nav a.active { color: var(--text); }
+    .top-link { color: var(--text)!important; border: 1px solid var(--line); border-radius: 9px; padding: 7px 12px; }
+    .top-link:hover { border-color: #58647c; background: var(--accent-soft); }
 
-/* sections */
-main>section+section{margin-top:64px}
-h2.title{font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
-.sub{color:var(--muted);font-size:.925rem;margin-top:2px}
-.lead{font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.38;font-weight:500;letter-spacing:-.018em;max-width:34em}
-.about p+p{margin-top:16px;color:#b4bcc7;max-width:42em}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding:0;list-style:none}
-.chips li{font-size:.875rem;padding:3px 12px;border:1px solid var(--line-strong);border-radius:99px;color:#c4cad3}
+    .layout {
+      display: grid; grid-template-columns: 265px minmax(0,1fr);
+      gap: clamp(42px, 7vw, 88px); padding: 64px 0 76px;
+      align-items: start;
+    }
+    .sidebar { position: sticky; top: 102px; }
+    .avatar {
+      display: block; width: 104px; height: 104px; border-radius: 22px;
+      border: 1px solid #3a3e48; object-fit: cover; background: var(--panel);
+    }
+    .side-name { margin: 22px 0 1px; font: 600 28px/1.2 var(--display); letter-spacing: -.055em; }
+    .handle { color: var(--subtle); font: 13px var(--mono); }
+    .side-bio { margin: 18px 0 0; color: #c0c4cc; font-size: 14px; line-height: 1.75; }
+    .side-meta { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; color: var(--muted); font-size: 13px; }
+    .side-meta li { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .side-meta svg { width: 15px; height: 15px; color: var(--subtle); flex: none; }
+    .side-meta a { overflow-wrap: anywhere; }
+    .side-meta a:hover { color: var(--accent); }
+    .education { margin-top: 28px; padding: 15px 0 0 15px; border-left: 2px solid #3b4559; }
+    .eyebrow { color: var(--subtle); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 700; }
+    .education strong { display: block; margin-top: 5px; font-size: 13px; font-weight: 600; }
+    .education span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .side-social { display: flex; gap: 9px; margin-top: 24px; }
+    .icon-link {
+      width: 37px; height: 37px; display: grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 10px; color: var(--muted);
+      transition: .2s ease;
+    }
+    .icon-link:hover { color: var(--text); border-color: #59647a; background: var(--accent-soft); transform: translateY(-2px); }
+    .icon-link svg { width: 16px; height: 16px; }
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.stat{background:var(--surface);padding:18px 20px}
-.stat b{display:block;font-size:1.6rem;font-weight:600;letter-spacing:-.02em;line-height:1.2;font-variant-numeric:tabular-nums}
-.stat span{color:var(--muted);font-size:.875rem}
+    main { min-width: 0; }
+    section + section { margin-top: 76px; }
+    .section-kicker { color: var(--accent); font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .section-title { margin: 7px 0 0; font: 600 clamp(22px,3vw,28px)/1.25 var(--display); letter-spacing: -.045em; }
+    .section-desc { margin: 7px 0 0; color: var(--muted); font-size: 14px; max-width: 620px; }
+    .hero { padding: 8px 0 35px; border-bottom: 1px solid var(--line-soft); }
+    .availability { display: inline-flex; align-items: center; gap: 9px; color: #b8c0ca; font-size: 12px; }
+    .availability::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(128,199,160,.10); }
+    .hero h1 { max-width: 760px; margin: 23px 0 16px; font: 600 clamp(38px,6vw,65px)/1.07 var(--display); letter-spacing: -.065em; }
+    .hero h1 span { color: var(--accent); }
+    .hero-copy { max-width: 650px; margin: 0; color: #b4bac4; font-size: 16px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 42px; padding: 0 15px; border-radius: 10px;
+      border: 1px solid var(--line); color: var(--text); background: var(--panel);
+      font-size: 13px; font-weight: 600; transition: .2s ease;
+    }
+    .button:hover { border-color: #58647c; background: var(--panel-hover); transform: translateY(-1px); }
+    .button.primary { background: #dce5ff; border-color: #dce5ff; color: #151923; }
+    .button.primary:hover { background: #cbd8ff; }
+    .button svg { width: 15px; height: 15px; }
 
-/* languages */
-.card{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:22px}
-.bar{display:flex;gap:2px;height:8px;border-radius:4px;overflow:hidden;background:var(--line)}
-.bar i{display:block;min-width:3px;transform-origin:left;animation:grow .7s cubic-bezier(.2,.7,.2,1) both}
-@keyframes grow{from{transform:scaleX(0)}}
-.legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px 24px;margin:20px 0 0;padding:0;list-style:none;font-size:.925rem}
-.legend li{display:flex;align-items:center;gap:8px;min-width:0}
-.legend em{font-style:normal;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
-.dot{width:9px;height:9px;border-radius:50%;flex:none}
+    .about-copy { color: #b4bac4; max-width: 720px; margin: 15px 0 0; }
+    .about-copy strong { color: var(--text); font-weight: 600; }
+    .info-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 25px; }
+    .info-card { padding: 16px 17px; border: 1px solid var(--line); border-radius: 12px; background: rgba(23,25,30,.72); }
+    .info-card span { display: block; color: var(--subtle); font-size: 11px; }
+    .info-card strong { display: block; margin-top: 4px; font: 600 15px var(--display); }
 
-/* projects */
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-.sort{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
-.sort button{background:none;border:0;color:var(--muted);font-size:.875rem;font-weight:500;padding:5px 12px;border-radius:6px;cursor:pointer;transition:color .2s,background .2s}
-.sort button:hover{color:var(--text)}
-.sort button[aria-pressed=true]{background:var(--line);color:var(--text)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px;margin-top:24px}
-.repo{display:flex;flex-direction:column;min-width:0;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);transition:border-color .2s,background .2s,transform .2s}
-.repo:hover{border-color:var(--line-strong);background:var(--raised);transform:translateY(-2px)}
-.repo h3{font:500 .975rem var(--mono);letter-spacing:-.01em;color:var(--accent);overflow-wrap:anywhere}
-.repo p{flex:1;margin:8px 0 16px;color:var(--muted);font-size:.925rem;line-height:1.55}
-.topics{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
-.topics span{font-size:.78rem;padding:1px 9px;border-radius:99px;background:var(--line);color:#aab3c0}
-.row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:.84rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.row span{display:inline-flex;align-items:center;gap:6px}
-.row svg{flex:none}
-.more{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px;color:var(--muted);font-size:.85rem}
-.btn{display:inline-block;padding:9px 16px;border:1px solid var(--line-strong);border-radius:var(--r);background:var(--surface);font-size:.9rem;font-weight:500;cursor:pointer;transition:border-color .2s,background .2s}
-.btn:hover{border-color:var(--accent);background:var(--raised)}
+    .skill-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 22px; }
+    .skill-card { padding: 17px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+    .skill-card h3 { margin: 0; font-size: 13px; font-weight: 600; }
+    .skill-card p { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 
-/* activity */
-.feed{list-style:none;padding:0;margin-top:16px;border-top:1px solid var(--line)}
-.feed li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.925rem}
-.feed li>span{min-width:0}
-.feed a{font-family:var(--mono);font-size:.875rem;transition:color .2s}
-.feed a:hover{color:var(--accent)}
-.feed .msg{color:var(--muted)}
-.feed time{color:var(--muted);font-size:.85rem;white-space:nowrap}
+    .project-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+    .filters { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .filters button { border: 0; border-radius: 7px; padding: 6px 10px; background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; }
+    .filters button[aria-pressed="true"] { color: var(--text); background: #2a2e38; }
+    .project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px; margin-top: 22px; }
+    .project {
+      display: flex; flex-direction: column; min-height: 190px; padding: 18px;
+      border: 1px solid var(--line); border-radius: 13px; background: var(--panel);
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .project:hover { border-color: #48536a; background: var(--panel-hover); transform: translateY(-2px); }
+    .project-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+    .project-icon { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; color: var(--accent); background: #202430; }
+    .project-icon svg { width: 16px; height: 16px; }
+    .project-name { margin: 15px 0 0; color: var(--text); font: 600 15px var(--display); overflow-wrap: anywhere; }
+    .project-desc { margin: 7px 0 16px; color: var(--muted); font-size: 12px; line-height: 1.65; flex: 1; }
+    .project-bottom { display: flex; justify-content: space-between; gap: 10px; align-items: center; color: var(--subtle); font-size: 11px; }
+    .project-language { display: inline-flex; align-items: center; gap: 7px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; background: var(--accent); }
+    .project-meta { display: flex; gap: 10px; }
+    .project-meta span { display: inline-flex; gap: 4px; align-items: center; }
+    .project-meta svg { width: 12px; height: 12px; }
+    .more-row { display: flex; justify-content: center; margin-top: 18px; }
+    .empty { grid-column: 1/-1; padding: 25px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); text-align: center; font-size: 13px; }
 
-/* states */
-.state{padding:28px;border:1px dashed var(--line-strong);border-radius:var(--r);color:var(--muted);text-align:center;font-size:.95rem}
-.state p{margin-bottom:14px}
-.state .btn{margin:0 4px}
-.state.plain{padding:20px 0 0;border:0;text-align:left}
-.sk{border-radius:var(--r);background:linear-gradient(90deg,var(--surface),var(--raised),var(--surface));background-size:200% 100%;animation:sh 1.5s linear infinite}
-@keyframes sh{to{background-position:-200% 0}}
+    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; margin-top: 22px; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--line); }
+    .stat { padding: 17px; background: var(--panel); }
+    .stat strong { display: block; font: 600 24px var(--display); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .stat span { color: var(--muted); font-size: 11px; }
+    .language-card { margin-top: 13px; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+    .language-card h3 { margin: 0; font-size: 13px; }
+    .language-card p { margin: 4px 0 15px; color: var(--subtle); font-size: 11px; }
+    .language-bar { display: flex; height: 7px; gap: 3px; overflow: hidden; border-radius: 20px; background: #292d35; }
+    .language-bar i { min-width: 3px; border-radius: 20px; }
+    .language-legend { display: flex; flex-wrap: wrap; gap: 9px 17px; margin-top: 14px; }
+    .language-legend span { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 11px; }
+    .language-legend em { color: var(--subtle); font-style: normal; }
 
-.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-footer{margin-top:24px}
-footer a:hover{color:var(--text)}
+    .activity-list { list-style: none; padding: 0; margin: 22px 0 0; border-top: 1px solid var(--line); }
+    .activity-list li { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .activity-main { min-width: 0; color: var(--muted); }
+    .activity-main a { color: var(--text); font-family: var(--mono); }
+    .activity-main a:hover { color: var(--accent); }
+    .activity-list time { color: var(--subtle); white-space: nowrap; font-size: 11px; }
+    .status { padding: 20px; color: var(--muted); border: 1px dashed var(--line); border-radius: 12px; font-size: 13px; }
+    .skeleton { height: 70px; border-radius: 11px; background: linear-gradient(90deg,#191c22,#242832,#191c22); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+    .footer { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; padding: 22px 0 30px; border-top: 1px solid var(--line-soft); color: var(--subtle); font-size: 11px; }
+    .footer a:hover { color: var(--text); }
 
-@media (max-width:520px){
-  .card{padding:18px}
-  .feed li{flex-direction:column;gap:2px}
-  .sort{width:100%}.sort button{flex:1;padding:6px 4px}
-}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
+    @media (max-width: 850px) {
+      .layout { grid-template-columns: 1fr; gap: 48px; padding-top: 42px; }
+      .sidebar { position: static; display: grid; grid-template-columns: 82px minmax(0,1fr); column-gap: 18px; align-items: center; }
+      .avatar { width: 82px; height: 82px; grid-row: span 3; border-radius: 18px; }
+      .side-name { margin: 0; font-size: 24px; }
+      .handle { align-self: start; }
+      .side-bio { grid-column: 1/-1; margin-top: 17px; }
+      .side-meta, .education, .side-social { display: none; }
+      .layout { padding-bottom: 48px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 32px, var(--width)); }
+      .topbar-inner { min-height: 60px; }
+      .nav { gap: 14px; }
+      .nav a { font-size: 11px; }
+      .nav a:nth-child(2) { display: none; }
+      .top-link { padding: 6px 9px; }
+      .layout { padding-top: 32px; }
+      .hero h1 { font-size: clamp(37px,11vw,52px); }
+      .hero-copy { font-size: 14px; }
+      section + section { margin-top: 58px; }
+      .project-grid, .skill-groups { grid-template-columns: 1fr; }
+      .project-head { align-items: start; flex-direction: column; }
+      .filters { width: 100%; }
+      .filters button { flex: 1; }
+      .stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .stat:last-child:nth-child(odd) { grid-column: 1/-1; }
+      .info-grid { gap: 9px; }
+      .info-card { padding: 13px; }
+      .activity-list li { flex-direction: column; gap: 3px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="shell">
-  <aside class="profile" aria-label="Profile">
-    <img class="avatar" id="avatar" src="https://github.com/rickosde.png?size=224" alt="Profile picture of rickosde" width="96" height="96">
-    <h1 id="name">rickosde</h1>
-    <div class="handle">@rickosde</div>
-    <p class="bio" id="bio">Young developer interested in web development, servers, networking and software.</p>
-    <ul class="facts" id="facts">
-      <li><a href="https://github.com/rickosde" rel="noopener">github.com/rickosde</a></li>
-    </ul>
-    <div class="edu">
-      <h2>Education</h2>
-      <p>IT, Networking and Design</p>
-      <small>Syddansk Erhvervsskole (SDE), Denmark</small>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#" aria-label="Ricko home"><span class="brand-mark">R</span><span>rickosde</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a class="top-link" href="https://github.com/rickosde" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
     </div>
-    <nav class="sidenav" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#overview">Overview</a>
-      <a href="#projects">Projects</a>
-      <a href="#activity">Activity</a>
-    </nav>
-  </aside>
+  </header>
 
-  <main id="main">
-    <section id="about" class="about">
-      <p class="lead">I’m a young developer who enjoys building websites, working with servers and networking, and developing software and technical projects.</p>
-      <p>I’m currently studying IT, Networking and Design at Syddansk Erhvervsskole (SDE) in Denmark, and I use GitHub to build, test and share what I learn.</p>
-      <ul class="chips" aria-label="Interests">
-        <li>IT</li><li>Networking</li><li>Servers</li><li>Programming</li><li>Web development</li><li>Software</li><li>Technology</li>
+  <div class="wrap layout">
+    <aside class="sidebar" aria-label="Profile">
+      <img class="avatar" id="avatar" src="https://github.com/rickosde.png?size=224" alt="Ricko's GitHub profile picture" width="104" height="104">
+      <h2 class="side-name" id="profile-name">Ricko</h2>
+      <div class="handle">@rickosde</div>
+      <p class="side-bio" id="profile-bio">IT student and developer interested in web development, software and infrastructure.</p>
+      <ul class="side-meta">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg><span>Denmark</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5.5 12 2l8 3.5v13L12 22l-8-3.5z"/><path d="m4 5.5 8 4 8-4M12 9.5V22"/></svg><a href="https://github.com/rickosde" target="_blank" rel="noopener noreferrer">github.com/rickosde</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg><a href="https://rickosde.github.io/" target="_blank" rel="noopener noreferrer">Portfolio website</a></li>
       </ul>
-    </section>
-
-    <section id="overview" aria-labelledby="ov-t">
-      <h2 class="title" id="ov-t">GitHub overview</h2>
-      <p class="sub">Live numbers from my public GitHub profile.</p>
-      <div style="margin-top:20px" id="stats" aria-live="polite"></div>
-      <div style="margin-top:16px" id="languages"></div>
-    </section>
-
-    <section id="projects" aria-labelledby="pr-t">
-      <div class="head">
-        <div>
-          <h2 class="title" id="pr-t">Projects</h2>
-          <p class="sub">Public repositories I’ve created, excluding forks, archives and this site.</p>
-        </div>
-        <div class="sort" role="group" aria-label="Sort projects">
-          <button type="button" data-sort="featured" aria-pressed="true">Featured</button>
-          <button type="button" data-sort="updated" aria-pressed="false">Recent</button>
-          <button type="button" data-sort="stars" aria-pressed="false">Stars</button>
-        </div>
+      <div class="education">
+        <div class="eyebrow">Education</div>
+        <strong>IT, Networking & Design</strong>
+        <span>Syddansk Erhvervsskole · Denmark</span>
       </div>
-      <div class="grid" id="grid" aria-live="polite"></div>
-      <div class="more" id="more"></div>
-    </section>
+      <div class="side-social">
+        <a class="icon-link" href="https://github.com/rickosde" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.77 2.2 3.06 1.68.1-.72.4-1.2.7-1.48-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.6 5.24-5.1 5.51.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://rickosde.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Website">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </a>
+      </div>
+    </aside>
 
-    <section id="activity" aria-labelledby="ac-t">
-      <h2 class="title" id="ac-t">Recent activity</h2>
-      <p class="sub">Latest public events on GitHub.</p>
-      <div id="feed" aria-live="polite"></div>
-    </section>
-
-    <noscript><div class="state" style="margin-top:32px">Live GitHub data needs JavaScript. You can still view everything at <a href="https://github.com/rickosde" style="color:var(--accent)">github.com/rickosde</a>.</div></noscript>
-  </main>
-</div>
-
-<footer class="shell" style="padding-top:0;padding-bottom:40px;display:block">
-  <div style="border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:.85rem">
-    <span>© <span id="year"></span> rickosde</span>
-    <span>Data from the <a href="https://docs.github.com/rest" rel="noopener" style="border-bottom:1px solid var(--line-strong)">GitHub REST API</a></span>
-  </div>
-</footer>
-
-<script>
-(() => {
-  'use strict';
-  const USER = 'rickosde', API = 'https://api.github.com', PAGE = 6, TTL = 600000;
-  const SKIP = [USER, USER + '.github.io'];
-  const LANG = {
-    JavaScript:'#f1e05a', TypeScript:'#4a8fe0', Python:'#4b8bbe', HTML:'#e34c26', CSS:'#8f6bd1', SCSS:'#c6538c',
-    Shell:'#89e051', PowerShell:'#5b8def', Batchfile:'#c1f12e', 'C#':'#43a047', 'C++':'#f34b7d', C:'#9aa5b1',
-    Java:'#b07219', PHP:'#8892d6', Go:'#00add8', Rust:'#dea584', Ruby:'#d9544f', Kotlin:'#a97bff', Swift:'#f05138',
-    Lua:'#5a6bd6', Vue:'#41b883', Dockerfile:'#5aa0c8', 'Jupyter Notebook':'#da5b0b'
-  };
-  const $ = id => document.getElementById(id);
-  const nf = new Intl.NumberFormat('en');
-  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const ago = iso => {
-    const s = Math.max(0, (Date.now() - new Date(iso)) / 1000);
-    for (const [n, v] of [['year',31536000],['month',2592000],['week',604800],['day',86400],['hour',3600],['minute',60]]) {
-      if (s >= v) { const x = Math.floor(s / v); return x + ' ' + n + (x > 1 ? 's' : '') + ' ago'; }
-    }
-    return 'just now';
-  };
-  const sk = (n, h) => Array.from({length:n}, () => `<div class="sk" style="height:${h}px"></div>`).join('');
-  const starSvg = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="currentColor"><path d="M8 1.5l2 4.1 4.5.6-3.3 3.1.8 4.5L8 11.6 4 13.8l.8-4.5L1.5 6.2 6 5.6z"/></svg>';
-  const forkSvg = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="3.5" r="1.6"/><circle cx="12" cy="3.5" r="1.6"/><circle cx="8" cy="12.5" r="1.6"/><path d="M4 5.1v1.2c0 1 .8 1.7 1.7 1.7h4.6c.9 0 1.7-.7 1.7-1.7V5.1M8 8v3"/></svg>';
-
-  class ApiError extends Error {
-    constructor(status, reset) { super('HTTP ' + status); this.status = status; this.reset = reset; }
-  }
-
-  async function gh(path) {
-    const key = 'gh:' + path;
-    try {
-      const c = JSON.parse(sessionStorage.getItem(key) || 'null');
-      if (c && Date.now() - c.t < TTL) return c.d;
-    } catch (e) {}
-    const ctl = new AbortController();
-    const timer = setTimeout(() => ctl.abort(), 12000);
-    let r;
-    try { r = await fetch(API + path, { headers: { Accept: 'application/vnd.github+json' }, signal: ctl.signal }); }
-    finally { clearTimeout(timer); }
-    if (!r.ok) {
-      const limited = (r.status === 403 || r.status === 429) && r.headers.get('x-ratelimit-remaining') === '0';
-      throw new ApiError(limited ? 429 : r.status, r.headers.get('x-ratelimit-reset'));
-    }
-    const d = await r.json();
-    try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), d })); } catch (e) {}
-    return d;
-  }
-
-  async function fetchRepos() {
-    const all = [];
-    for (let p = 1; p <= 3; p++) {
-      const page = await gh(`/users/${USER}/repos?type=owner&sort=pushed&per_page=100&page=${p}`);
-      all.push(...page);
-      if (page.length < 100) break;
-    }
-    return all;
-  }
-
-  function errorText(err) {
-    if (err && err.status === 429) {
-      const t = err.reset ? new Date(err.reset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : null;
-      return 'GitHub’s API rate limit has been reached' + (t ? '. You can try again after ' + t + '.' : '. Please try again in a few minutes.');
-    }
-    if (err && err.status === 404) return 'This GitHub profile could not be found.';
-    return 'GitHub data could not be loaded. Check your connection and try again.';
-  }
-
-  function errorBlock(err) {
-    return `<div class="state" role="alert"><p>${esc(errorText(err))}</p>
-      <button class="btn" type="button" data-retry>Try again</button>
-      <a class="btn" href="https://github.com/${USER}" rel="noopener">Open GitHub profile</a></div>`;
-  }
-
-  /* ---------- render ---------- */
-  function renderProfile(u) {
-    if (u.name) { $('name').textContent = u.name; }
-    if (u.bio) $('bio').textContent = u.bio;
-    if (u.avatar_url) $('avatar').src = u.avatar_url + (u.avatar_url.includes('?') ? '&' : '?') + 's=224';
-    const items = [`<li><a href="https://github.com/${USER}" rel="noopener">github.com/${USER}</a></li>`];
-    if (u.blog) {
-      const url = /^https?:\/\//i.test(u.blog) ? u.blog : 'https://' + u.blog;
-      items.push(`<li><a href="${esc(url)}" rel="noopener">${esc(u.blog.replace(/^https?:\/\//i, '').replace(/\/$/, ''))}</a></li>`);
-    }
-    if (u.location) items.push(`<li>${esc(u.location)}</li>`);
-    if (u.created_at) items.push(`<li>On GitHub since ${new Date(u.created_at).getFullYear()}</li>`);
-    $('facts').innerHTML = items.join('');
-  }
-
-  function renderStats(user, repos) {
-    const tiles = [];
-    const nonFork = repos ? repos.filter(r => !r.fork) : null;
-    const total = user ? user.public_repos : (repos && repos.length < 300 ? repos.length : null);
-    if (total != null) tiles.push([nf.format(total), 'Public repositories']);
-    if (user) tiles.push([nf.format(user.followers), 'Followers']);
-    const complete = repos && total != null && repos.length === total;
-    if (complete) tiles.push([nf.format(nonFork.reduce((a, r) => a + r.stargazers_count, 0)), 'Stars received']);
-    if (nonFork && nonFork.length) {
-      const last = nonFork.reduce((a, r) => (r.pushed_at > a ? r.pushed_at : a), '');
-      if (last) tiles.push([ago(last), 'Last push']);
-    }
-    $('stats').innerHTML = tiles.length
-      ? `<div class="stats">${tiles.map(([n, l]) => `<div class="stat"><b>${esc(n)}</b><span>${l}</span></div>`).join('')}</div>`
-      : '';
-  }
-
-  function renderLanguages(own) {
-    const counts = {};
-    own.forEach(r => { if (r.language) counts[r.language] = (counts[r.language] || 0) + 1; });
-    let entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-    const total = entries.reduce((a, e) => a + e[1], 0);
-    if (!total) { $('languages').innerHTML = ''; return; }
-    if (entries.length > 8) {
-      const rest = entries.slice(7).reduce((a, e) => a + e[1], 0);
-      entries = entries.slice(0, 7).concat([['Other', rest]]);
-    }
-    const col = n => LANG[n] || '#8b94a1';
-    const label = entries.map(([n, c]) => `${n} ${Math.round(c / total * 100)}%`).join(', ');
-    $('languages').innerHTML = `<div class="card">
-      <h3 style="font-size:.95rem;font-weight:600;margin-bottom:2px">Languages</h3>
-      <p class="sub" style="margin:0 0 16px">Primary language per repository (${total} with a detected language).</p>
-      <div class="bar" role="img" aria-label="${esc(label)}">${entries.map(([n, c]) => `<i style="flex:${c};background:${col(n)}" title="${esc(n)}"></i>`).join('')}</div>
-      <ul class="legend">${entries.map(([n, c]) => `<li><span class="dot" style="background:${col(n)}"></span><span>${esc(n)}</span><em>${Math.round(c / total * 100)}%</em></li>`).join('')}</ul>
-    </div>`;
-  }
-
-  let projects = [], sort = 'featured', shown = PAGE;
-  const score = r => {
-    const days = (Date.now() - new Date(r.pushed_at)) / 864e5;
-    return r.stargazers_count * 2 + Math.max(0, 1 - days / 365) * 5 + (r.description ? 1.5 : 0) + (r.topics && r.topics.length ? .5 : 0);
-  };
-  const sorters = {
-    featured: (a, b) => score(b) - score(a),
-    updated: (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at),
-    stars: (a, b) => b.stargazers_count - a.stargazers_count || new Date(b.pushed_at) - new Date(a.pushed_at)
-  };
-
-  function renderProjects() {
-    const grid = $('grid'), more = $('more');
-    if (!projects.length) {
-      grid.style.display = 'block';
-      grid.innerHTML = `<div class="state"><p>No public projects to show yet.</p><a class="btn" href="https://github.com/${USER}?tab=repositories" rel="noopener">Browse repositories on GitHub</a></div>`;
-      more.innerHTML = '';
-      return;
-    }
-    grid.style.display = '';
-    const list = [...projects].sort(sorters[sort]);
-    grid.innerHTML = list.slice(0, shown).map(r => `
-      <a class="repo" href="${esc(r.html_url)}" rel="noopener">
-        <h3>${esc(r.name)}</h3>
-        <p>${r.description ? esc(r.description) : 'No description provided.'}</p>
-        ${r.topics && r.topics.length ? `<div class="topics">${r.topics.slice(0, 4).map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}
-        <div class="row">
-          ${r.language ? `<span><i class="dot" style="background:${LANG[r.language] || '#8b94a1'}"></i>${esc(r.language)}</span>` : ''}
-          <span>${starSvg}${nf.format(r.stargazers_count)}<span class="vh"> stars</span></span>
-          <span>${forkSvg}${nf.format(r.forks_count)}<span class="vh"> forks</span></span>
-          <span>Updated ${ago(r.pushed_at)}</span>
+    <main>
+      <section class="hero" id="home">
+        <div class="availability">IT student · Developer</div>
+        <h1>Building things<br>with <span>technology.</span></h1>
+        <p class="hero-copy">I'm Ricko, an IT student at Syddansk Erhvervsskole with an interest in software development, web technologies and infrastructure. I enjoy turning ideas into practical projects and learning how technology works behind the scenes.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="button" href="https://github.com/rickosde" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a>
         </div>
-      </a>`).join('');
-    more.innerHTML = list.length > shown
-      ? `<button class="btn" type="button" id="moreBtn">Show more</button><span>Showing ${shown} of ${list.length}</span>`
-      : (list.length > PAGE ? `<span>Showing all ${list.length} projects</span>` : '');
-    const b = $('moreBtn');
-    if (b) b.addEventListener('click', () => { shown += PAGE; renderProjects(); });
-  }
+      </section>
 
-  document.querySelectorAll('.sort button').forEach(b => b.addEventListener('click', () => {
-    sort = b.dataset.sort; shown = PAGE;
-    document.querySelectorAll('.sort button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    if (projects.length) renderProjects();
-  }));
+      <section id="about">
+        <div class="section-kicker">01 / Profile</div>
+        <h2 class="section-title">A little about me.</h2>
+        <p class="about-copy">I'm currently studying <strong>IT, Networking and Design</strong> at Syddansk Erhvervsskole. Outside of school, I spend time building websites, experimenting with Linux and server environments, and developing technical projects. I like understanding how things fit together — from the interface people use to the systems running behind it.</p>
+        <div class="info-grid">
+          <div class="info-card"><span>Currently studying</span><strong>IT · Networking · Design</strong></div>
+          <div class="info-card"><span>Main interests</span><strong>Web · Software · Infrastructure</strong></div>
+        </div>
+      </section>
 
-  function renderActivity(events) {
-    const items = events.filter(e => e.type === 'PushEvent' || (e.type === 'CreateEvent' && e.payload.ref_type === 'repository')).slice(0, 6);
-    if (!items.length) { $('feed').innerHTML = '<p class="state plain">No recent public activity.</p>'; return; }
-    $('feed').innerHTML = '<ul class="feed">' + items.map(e => {
-      const name = e.repo.name.split('/')[1] || e.repo.name;
-      let text;
-      if (e.type === 'CreateEvent') text = 'Created repository';
-      else {
-        const c = e.payload.commits && e.payload.commits.length ? e.payload.commits[e.payload.commits.length - 1] : null;
-        const branch = (e.payload.ref || '').replace('refs/heads/', '');
-        text = c && c.message ? c.message.split('\n')[0].slice(0, 90) : 'Pushed' + (branch ? ' to ' + branch : '');
+      <section id="experience">
+        <div class="section-kicker">02 / Experience</div>
+        <h2 class="section-title">Technologies I work with.</h2>
+        <p class="section-desc">A selection of tools and technologies I have explored through school and personal projects.</p>
+        <div class="skill-groups">
+          <article class="skill-card"><h3>Web development</h3><p>HTML · CSS · JavaScript · React · Node.js</p></article>
+          <article class="skill-card"><h3>Infrastructure</h3><p>Linux · Ubuntu · SSH · Hosting · Networking</p></article>
+          <article class="skill-card"><h3>Development tools</h3><p>Git · GitHub · VS Code · npm</p></article>
+          <article class="skill-card"><h3>Game server development</h3><p>FiveM · Lua · QBCore · Server configuration</p></article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="project-head">
+          <div>
+            <div class="section-kicker">03 / Selected work</div>
+            <h2 class="section-title">Projects I've worked on.</h2>
+            <p class="section-desc">A live selection of my public GitHub repositories.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Sort projects">
+            <button type="button" data-sort="featured" aria-pressed="true">Featured</button>
+            <button type="button" data-sort="updated" aria-pressed="false">Recent</button>
+            <button type="button" data-sort="stars" aria-pressed="false">Stars</button>
+          </div>
+        </div>
+        <div class="project-grid" id="projects-grid" aria-live="polite">
+          <div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+        <div class="more-row" id="projects-more"></div>
+      </section>
+
+      <section id="overview">
+        <div class="section-kicker">04 / GitHub</div>
+        <h2 class="section-title">A quick overview.</h2>
+        <p class="section-desc">A few live numbers from my public GitHub profile.</p>
+        <div class="stats" id="stats"><div class="stat skeleton"></div><div class="stat skeleton"></div><div class="stat skeleton"></div></div>
+        <div id="languages"></div>
+      </section>
+
+      <section id="activity">
+        <div class="section-kicker">05 / Latest updates</div>
+        <h2 class="section-title">Recent activity.</h2>
+        <p class="section-desc">A look at some of my latest public GitHub updates.</p>
+        <div id="activity-content"><div class="skeleton" style="margin-top:22px"></div></div>
+      </section>
+
+      <section id="contact">
+        <div class="section-kicker">06 / Contact</div>
+        <h2 class="section-title">Let's connect.</h2>
+        <p class="section-desc">You can find my work, repositories and ongoing projects on GitHub.</p>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/rickosde" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="wrap footer">
+    <span>© <span id="year"></span> Ricko. Built with care.</span>
+    <a href="https://github.com/rickosde" target="_blank" rel="noopener noreferrer">github.com/rickosde ↗</a>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+      const USER = "rickosde";
+      const API = "https://api.github.com";
+      const PAGE_SIZE = 6;
+      const CACHE_TIME = 10 * 60 * 1000;
+      const EXCLUDED = new Set([USER.toLowerCase(), `${USER}.github.io`.toLowerCase()]);
+      const LANGUAGE_COLORS = {
+        JavaScript:"#f1e05a", TypeScript:"#3178c6", Python:"#3572a5", HTML:"#e34c26",
+        CSS:"#663399", Shell:"#89e051", Lua:"#000080", PHP:"#4f5d95",
+        Java:"#b07219", C:"#555555", "C++":"#f34b7d", "C#":"#178600",
+        Go:"#00add8", Rust:"#dea584", Vue:"#41b883", SCSS:"#c6538c",
+        PowerShell:"#012456", Dockerfile:"#384d54", Ruby:"#701516"
+      };
+      const $ = id => document.getElementById(id);
+      const number = new Intl.NumberFormat("en");
+      let repositories = [];
+      let sortMode = "featured";
+      let visibleCount = PAGE_SIZE;
+
+      const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      })[char]);
+
+      function timeAgo(value) {
+        const seconds = Math.max(0, (Date.now() - new Date(value).getTime()) / 1000);
+        const units = [["year",31536000],["month",2592000],["week",604800],["day",86400],["hour",3600],["minute",60]];
+        for (const [name, size] of units) {
+          if (seconds >= size) {
+            const amount = Math.floor(seconds / size);
+            return `${amount} ${name}${amount === 1 ? "" : "s"} ago`;
+          }
+        }
+        return "just now";
       }
-      return `<li><span><a href="https://github.com/${esc(e.repo.name)}" rel="noopener">${esc(name)}</a> <span class="msg">${esc(text)}</span></span><time datetime="${esc(e.created_at)}">${ago(e.created_at)}</time></li>`;
-    }).join('') + '</ul>';
-  }
 
-  /* ---------- load ---------- */
-  async function load() {
-    $('stats').innerHTML = sk(1, 84);
-    $('languages').innerHTML = sk(1, 150);
-    $('grid').style.display = '';
-    $('grid').innerHTML = sk(4, 150);
-    $('more').innerHTML = '';
-    $('feed').innerHTML = sk(1, 120);
+      async function github(path) {
+        const key = `portfolio:${path}`;
+        try {
+          const cached = JSON.parse(sessionStorage.getItem(key) || "null");
+          if (cached && Date.now() - cached.time < CACHE_TIME) return cached.data;
+        } catch (_) {}
 
-    const [u, r, e] = await Promise.allSettled([
-      gh(`/users/${USER}`), fetchRepos(), gh(`/users/${USER}/events/public?per_page=30`)
-    ]);
-    const user = u.status === 'fulfilled' ? u.value : null;
-    const repos = r.status === 'fulfilled' ? r.value : null;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 12000);
+        let response;
+        try {
+          response = await fetch(`${API}${path}`, {
+            headers: { Accept: "application/vnd.github+json" },
+            signal: controller.signal
+          });
+        } finally {
+          clearTimeout(timeout);
+        }
 
-    if (user) renderProfile(user);
-    renderStats(user, repos);
+        if (!response.ok) {
+          const error = new Error(`GitHub API returned ${response.status}`);
+          error.status = response.status;
+          throw error;
+        }
+        const data = await response.json();
+        try { sessionStorage.setItem(key, JSON.stringify({ time: Date.now(), data })); } catch (_) {}
+        return data;
+      }
 
-    if (repos) {
-      const own = repos.filter(x => !x.fork && !SKIP.includes(x.name.toLowerCase()));
-      projects = own.filter(x => !x.archived);
-      renderLanguages(own);
-      renderProjects();
-    } else {
-      $('languages').innerHTML = '';
-      $('grid').style.display = 'block';
-      $('grid').innerHTML = errorBlock(r.reason);
-    }
+      async function getRepositories() {
+        const all = [];
+        for (let page = 1; page <= 3; page++) {
+          const result = await github(`/users/${USER}/repos?type=owner&sort=pushed&per_page=100&page=${page}`);
+          all.push(...result);
+          if (result.length < 100) break;
+        }
+        return all;
+      }
 
-    if (e.status === 'fulfilled') renderActivity(e.value);
-    else $('feed').innerHTML = '<p class="state plain">Recent activity could not be loaded right now.</p>';
-  }
+      function renderProfile(user) {
+        if (user.name) $("profile-name").textContent = user.name;
+        if (user.bio) $("profile-bio").textContent = user.bio;
+        if (user.avatar_url) $("avatar").src = `${user.avatar_url}&s=224`;
+      }
 
-  document.addEventListener('click', ev => { if (ev.target.closest('[data-retry]')) load(); });
-  $('year').textContent = new Date().getFullYear();
-  load();
-})();
-</script>
+      function renderStats(user, repos) {
+        const own = repos ? repos.filter(repo => !repo.fork) : [];
+        const lastPush = own.reduce((latest, repo) => {
+          return !latest || repo.pushed_at > latest ? repo.pushed_at : latest;
+        }, null);
+        const values = [];
+        if (user) values.push([number.format(user.public_repos), "Public repositories"]);
+        if (user) values.push([number.format(user.followers), "GitHub followers"]);
+        if (repos) values.push([number.format(own.reduce((sum, repo) => sum + repo.stargazers_count, 0)), "Stars received"]);
+        $("stats").innerHTML = values.length
+          ? values.map(([value, label]) => `<div class="stat"><strong>${escapeHTML(value)}</strong><span>${label}</span></div>`).join("")
+          : `<div class="empty">GitHub statistics are temporarily unavailable.</div>`;
+        if (lastPush) $("stats").setAttribute("aria-label", `Last repository update ${timeAgo(lastPush)}`);
+      }
+
+      function renderLanguages(repos) {
+        const counts = {};
+        repos.forEach(repo => {
+          if (repo.language) counts[repo.language] = (counts[repo.language] || 0) + 1;
+        });
+        const entries = Object.entries(counts).sort((a,b) => b[1] - a[1]).slice(0,7);
+        const total = entries.reduce((sum, entry) => sum + entry[1], 0);
+        if (!total) { $("languages").innerHTML = ""; return; }
+
+        $("languages").innerHTML = `
+          <div class="language-card">
+            <h3>Languages across repositories</h3>
+            <p>Based on the primary language detected by GitHub.</p>
+            <div class="language-bar" role="img" aria-label="${escapeHTML(entries.map(([name,count]) => `${name} ${Math.round(count/total*100)}%`).join(", "))}">
+              ${entries.map(([name,count]) => `<i style="flex:${count};background:${LANGUAGE_COLORS[name] || "#87909e"}"></i>`).join("")}
+            </div>
+            <div class="language-legend">
+              ${entries.map(([name,count]) => `<span><i class="dot" style="background:${LANGUAGE_COLORS[name] || "#87909e"}"></i>${escapeHTML(name)} <em>${Math.round(count/total*100)}%</em></span>`).join("")}
+            </div>
+          </div>`;
+      }
+
+      function featuredScore(repo) {
+        const ageDays = (Date.now() - new Date(repo.pushed_at).getTime()) / 86400000;
+        return repo.stargazers_count * 3
+          + Math.max(0, 1 - ageDays / 365) * 4
+          + (repo.description ? 2 : 0)
+          + ((repo.topics || []).length ? 1 : 0);
+      }
+
+      const sorters = {
+        featured: (a,b) => featuredScore(b) - featuredScore(a),
+        updated: (a,b) => new Date(b.pushed_at) - new Date(a.pushed_at),
+        stars: (a,b) => b.stargazers_count - a.stargazers_count || new Date(b.pushed_at) - new Date(a.pushed_at)
+      };
+
+      const starIcon = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m8 1.2 2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 12l-4.2 2.2.8-4.7L1.2 6.2l4.7-.7L8 1.2Z"/></svg>';
+
+      function renderProjects() {
+        const grid = $("projects-grid");
+        const list = [...repositories].sort(sorters[sortMode]);
+        const visible = list.slice(0, visibleCount);
+
+        if (!visible.length) {
+          grid.innerHTML = `<div class="empty">No public repositories found. <a href="https://github.com/${USER}?tab=repositories">Browse GitHub ↗</a></div>`;
+          $("projects-more").innerHTML = "";
+          return;
+        }
+
+        grid.innerHTML = visible.map(repo => `
+          <a class="project" href="${escapeHTML(repo.html_url)}" target="_blank" rel="noopener noreferrer">
+            <div class="project-top">
+              <span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 1 4 16.5z"/><path d="M4 16.5A2.5 2.5 0 0 1 6.5 14H20"/></svg></span>
+              <span style="color:var(--subtle);font-size:11px">${repo.fork ? "Fork" : "Repository"}</span>
+            </div>
+            <h3 class="project-name">${escapeHTML(repo.name)}</h3>
+            <p class="project-desc">${escapeHTML(repo.description || "A project from my GitHub profile.")}</p>
+            <div class="project-bottom">
+              <span class="project-language">${repo.language ? `<i class="dot" style="background:${LANGUAGE_COLORS[repo.language] || "#87909e"}"></i>${escapeHTML(repo.language)}` : "Open source"}</span>
+              <span class="project-meta"><span>${starIcon}${number.format(repo.stargazers_count)}</span><span>Updated ${timeAgo(repo.pushed_at)}</span></span>
+            </div>
+          </a>`).join("");
+
+        $("projects-more").innerHTML = list.length > visibleCount
+          ? `<button class="button" id="show-more" type="button">Show more repositories</button>`
+          : "";
+        const more = $("show-more");
+        if (more) more.addEventListener("click", () => {
+          visibleCount += PAGE_SIZE;
+          renderProjects();
+        });
+      }
+
+      function renderActivity(events) {
+        const selected = events.filter(event =>
+          event.type === "PushEvent" ||
+          (event.type === "CreateEvent" && event.payload?.ref_type === "repository")
+        ).slice(0,6);
+
+        if (!selected.length) {
+          $("activity-content").innerHTML = `<div class="status">No recent public activity to display.</div>`;
+          return;
+        }
+
+        $("activity-content").innerHTML = `<ul class="activity-list">${selected.map(event => {
+          const repoName = event.repo.name.split("/").pop();
+          let message = "Pushed updates";
+          if (event.type === "CreateEvent") {
+            message = "Created a repository";
+          } else {
+            const commits = event.payload?.commits || [];
+            if (commits.length && commits[commits.length - 1].message) {
+              message = commits[commits.length - 1].message.split("\n")[0].slice(0,100);
+            }
+          }
+          return `<li><span class="activity-main"><a href="https://github.com/${escapeHTML(event.repo.name)}" target="_blank" rel="noopener noreferrer">${escapeHTML(repoName)}</a> · ${escapeHTML(message)}</span><time datetime="${escapeHTML(event.created_at)}">${timeAgo(event.created_at)}</time></li>`;
+        }).join("")}</ul>`;
+      }
+
+      function renderError(target, message) {
+        $(target).innerHTML = `<div class="status">${escapeHTML(message)} <a href="https://github.com/${USER}" style="color:var(--accent)">Open GitHub ↗</a></div>`;
+      }
+
+      document.querySelectorAll("[data-sort]").forEach(button => {
+        button.addEventListener("click", () => {
+          sortMode = button.dataset.sort;
+          visibleCount = PAGE_SIZE;
+          document.querySelectorAll("[data-sort]").forEach(item => {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+          renderProjects();
+        });
+      });
+
+      async function init() {
+        $("year").textContent = new Date().getFullYear();
+        const [userResult, reposResult, eventsResult] = await Promise.allSettled([
+          github(`/users/${USER}`),
+          getRepositories(),
+          github(`/users/${USER}/events/public?per_page=30`)
+        ]);
+
+        const user = userResult.status === "fulfilled" ? userResult.value : null;
+        const repos = reposResult.status === "fulfilled" ? reposResult.value : null;
+
+        if (user) renderProfile(user);
+        if (repos) {
+          const own = repos.filter(repo => !repo.fork && !EXCLUDED.has(repo.name.toLowerCase()) && !repo.archived);
+          repositories = own;
+          renderStats(user, own);
+          renderLanguages(own);
+          renderProjects();
+        } else {
+          renderStats(user, null);
+          renderError("projects-grid", "GitHub repositories could not be loaded. Please try again later.");
+        }
+
+        if (eventsResult.status === "fulfilled") renderActivity(eventsResult.value);
+        else renderError("activity-content", "Recent GitHub activity could not be loaded right now.");
+      }
+
+      init().catch(() => {
+        renderError("projects-grid", "Something went wrong while loading GitHub data.");
+        renderError("activity-content", "Activity is temporarily unavailable.");
+      });
+    })();
+  </script>
 </body>
 </html>
